@@ -1,0 +1,18 @@
+{
+  "name": "discrete-maths-project",
+  "version": "1.0.0",
+  "description": "Suite of npm packages used for the crypto system project.",
+  "scripts": {
+    "deploy": "firebase deploy --only hosting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-Lemus/Discrete-Maths-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-Lemus/Discrete-Maths-Project/issues"
+  },
+  "homepage": "https://github.com/Gabriel-Lemus/Discrete-Maths-Project#readme"
+}
