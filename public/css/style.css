@@ -1,0 +1,96 @@
+body {
+  background-color: #f6f3e7;
+  padding-top: 65px;
+}
+
+.bg-primary {
+  background-color: #efe1be !important;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255, 102, 204);
+}
+
+.brown-text {
+  color: #a67b5bb3 !important;
+}
+
+.brown-text:hover {
+  color: #a67b5b !important;
+  font-weight: 500;
+}
+
+#log-in-form,
+#sign-up-form,
+#forgot-password-form {
+  max-width: 480px;
+  margin: auto;
+  padding: 0 3rem;
+}
+
+#toggle-password-visibility,
+#toggle-password-visibility-2 {
+  height: 100%;
+  width: 35px;
+  border-width: thin;
+  border-color: #ffffff;
+  border-left: none;
+  border-top: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#emailAddressLogin {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#passwordLogin {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: 0px;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  background-color: #a67a5b;
+  border-color: #a67a5b;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 3rem;
+}
+
+#login-spinner,
+#signup-spinner,
+#forgot-password-spinner,
+#request-access-spinner {
+  width: 3rem;
+  height: 3rem;
+  display: none;
+}
+
+.info {
+  display: inline;
+  color: #007bff;
+}
+
+.info:hover {
+  cursor: pointer;
+}
+
+.password-icon {
+  border-bottom-right-radius: 5px;
+}
+
+.password-icon-2 {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.password-icon:hover, .password-icon-2:hover {
+  cursor: pointer;
+}
