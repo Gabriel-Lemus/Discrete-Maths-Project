@@ -166,7 +166,7 @@ body {
   color: red;
 }
 
-#main-blurred {
+#body-blurred {
   filter: blur(5px);
 }
 

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Suite of npm packages used for the crypto system project.",
   "scripts": {
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "firebase deploy --only hosting",
+    "build": "browserify ./public/scripts/signup.js -o ./public/dist/signup.bundle.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,61 @@
   },
   "homepage": "https://github.com/Gabriel-Lemus/Discrete-Maths-Project#readme",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "crypto-js": "^4.0.0",
+    "jquery": "^3.6.0",
     "node-rsa": "^1.1.1"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "crlf",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": false,
+    "overrides": [
+      {
+        "files": ["*.html"],
+        "options": {
+          "printWidth": 150,
+          "parser": "html"
+        }
+      },
+      {
+        "files": ["*.css"],
+        "options": {
+          "parser": "css"
+        }
+      },
+      {
+        "files": ["*.js"],
+        "options": {
+          "parser": "babel"
+        }
+      },
+      {
+        "files": ["*.ts"],
+        "options": {
+          "parser": "typescript"
+        }
+      },
+      {
+        "files": ["*.json", "*.jsonc"],
+        "options": {
+          "parser": "json"
+        }
+      }
+    ]
   }
 }
