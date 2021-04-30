@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>CS | Sign up</title>
+  </head>
+
+  <body class="text-center">
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md fixed-top bg-primary">
+        <div class="container">
+          <div style="height: 50px"></div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Signup form -->
+    <div class="text-center mt-5">
+      <form id="sign-up-form">
+        <h3 class="mb-3 font-weight-normal">Sign up</h3>
+        <label for="firstName" class="sr-only">First Name</label>
+        <input name="firstName" type="text" id="firstName" class="form-control" placeholder="First Name" required autofocus />
+        <br />
+        <label for="lastName" class="sr-only">Last Name</label>
+        <input name="lastName" type="text" id="lastName" class="form-control" placeholder="Last Name" required />
+        <br />
+        <label for="nit" class="sr-only">NIT</label>
+        <input name="nit" type="number" id="nit" class="form-control" placeholder="NIT" required />
+        <br />
+        <select id="selectRole" class="form-control" required>
+          <option value="">Please choose a role</option>
+          <option value="buyer">Buyer</option>
+          <option value="seller">Seller</option>
+        </select>
+        <br />
+        <label for="emailAddress" class="sr-only">Email Address</label>
+        <input name="email" type="email" id="emailAddress" class="form-control" placeholder="Email Address" required />
+        <br />
+        <label for="password" class="sr-only"></label>
+        <div class="input-group">
+          <input name="password" type="password" id="passwordSignUp" class="form-control" placeholder="Password" required />
+          <div class="bg-light border border-secondary password-icon-2">
+            <div id="toggle-password-visibility"><i id="eye-icon" class="fa fa-eye-slash align-middle mt-2" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <br />
+        <label for="passwordConfirmation" class="sr-only"></label>
+        <div class="input-group">
+          <input name="passwordConf" type="password" id="confirmPasswordSignUp" class="form-control" placeholder="Confirm Password" required />
+          <div class="bg-light border border-secondary password-icon-2">
+            <div id="toggle-password-visibility-2"><i id="eye-icon-2" class="fa fa-eye-slash align-middle mt-2" aria-hidden="true"></i></div>
+          </div>
+        </div>
+        <br />
+        <div class="mt-5">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign up" name="Sign up" />
+        </div>
+        <div class="mt-4">
+          <div><b>Already have an account? </b><a href="./login.html">Log in</a></div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Spinner container -->
+    <div class="spinner-container" style="height: 5rem">
+      <!-- Spinner -->
+      <div class="d-flex justify-content-center text-primary mt-5">
+        <div id="signup-spinner" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="signUpModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+          </div>
+          <div class="modal-footer">
+            <button id="modal-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-functions.js"></script>
+    <script src="../dist/db.js"></script>
+    <script src="../dist/signup.bundle.js"></script>
+  </body>
+</html>
