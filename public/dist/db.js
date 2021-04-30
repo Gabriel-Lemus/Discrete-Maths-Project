@@ -15,8 +15,3 @@ const functions = firebase.functions();
 db.settings({ timestampsInSnapshots: true });
 
 // End of Firebase setup.
-
-// Redirect to inventory page if the user is already logged in
-function redirectToInventoryPage() {
-  window.location.href = '../pages/inventory.html';
-}
