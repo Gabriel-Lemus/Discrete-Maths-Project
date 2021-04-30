@@ -15,3 +15,6 @@ const functions = firebase.functions();
 db.settings({ timestampsInSnapshots: true });
 
 // End of Firebase setup.
+
+// Products cart object
+let cart = [];
