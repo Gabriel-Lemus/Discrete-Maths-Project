@@ -32765,6 +32765,13 @@ window.Buffer = (data) => {
   return Buffer.from(data);
 };
 
+// Listen for authentication status changes
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    window.location.href = './estore.html';
+  }
+});
+
 // Helper objects
 const monthNames = [
   'January',
@@ -32787,7 +32794,7 @@ let assumeUserIsCreated = true;
 // Listen for authentication status changes
 auth.onAuthStateChanged((user) => {
   if (user && assumeUserIsCreated) {
-    window.location.href = '../pages/inventory.html';
+    window.location.href = './estore.html';
   }
 });
 
@@ -33059,7 +33066,7 @@ $('#sign-up-form').on('submit', (event) => {
                                   name: userName,
                                   email: email,
                                   nit: nit,
-                                  balance: 1000,
+                                  profit: 0,
                                   privateKey: privateKeyPem,
                                   publicKey: publicKeyPem,
                                   certificate: signedCertificate,

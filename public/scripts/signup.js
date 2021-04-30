@@ -14,7 +14,7 @@ window.Buffer = (data) => {
 // Listen for authentication status changes
 auth.onAuthStateChanged((user) => {
   if (user) {
-    window.location.href = './pages/estore.html';
+    window.location.href = './estore.html';
   }
 });
 
@@ -40,7 +40,7 @@ let assumeUserIsCreated = true;
 // Listen for authentication status changes
 auth.onAuthStateChanged((user) => {
   if (user && assumeUserIsCreated) {
-    window.location.href = '../pages/inventory.html';
+    window.location.href = './estore.html';
   }
 });
 
