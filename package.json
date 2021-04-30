@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Suite of npm packages used for the crypto system project.",
   "scripts": {
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "firebase deploy --only hosting",
+    "build": "browserify ./public/scripts/signup.js -o ./public/dist/signup.bundle.js"
   },
   "repository": {
     "type": "git",
@@ -41,43 +42,32 @@
     "vueIndentScriptAndStyle": false,
     "overrides": [
       {
-        "files": [
-          "*.html"
-        ],
+        "files": ["*.html"],
         "options": {
           "printWidth": 150,
           "parser": "html"
         }
       },
       {
-        "files": [
-          "*.css"
-        ],
+        "files": ["*.css"],
         "options": {
           "parser": "css"
         }
       },
       {
-        "files": [
-          "*.js"
-        ],
+        "files": ["*.js"],
         "options": {
           "parser": "babel"
         }
       },
       {
-        "files": [
-          "*.ts"
-        ],
+        "files": ["*.ts"],
         "options": {
           "parser": "typescript"
         }
       },
       {
-        "files": [
-          "*.json",
-          "*.jsonc"
-        ],
+        "files": ["*.json", "*.jsonc"],
         "options": {
           "parser": "json"
         }
