@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/Gabriel-Lemus/Discrete-Maths-Project#readme",
   "devDependencies": {
+    "browserify": "^17.0.0",
     "crypto-js": "^4.0.0",
     "jquery": "^3.6.0",
     "node-rsa": "^1.1.1"
