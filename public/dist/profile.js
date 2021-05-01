@@ -35,8 +35,38 @@ function setUserProfile(userData) {
   $('#nit').text(userData.nit);
   if (userData.role === 'buyer') {
     $('#role').text('Buyer');
+    $('#balance').text('Funds');
+    db.collection('buyers')
+    .doc(userData.name)
+    .get()
+    .then((userInfo) => {
+        $('#balanceValue').text(
+          userInfo.data().balance.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          })
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   } else {
     $('#role').text('Seller');
+    $('#balance').text('Profit');
+    db.collection('sellers')
+      .doc(userData.name)
+      .get()
+      .then((userInfo) => {
+        $('#balanceValue').text(
+          userInfo.data().profit.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          })
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
   $('#expDate').text(
     `${expDate.getMonth() + 1}/${expDate.getDate()}/${expDate.getFullYear()}`

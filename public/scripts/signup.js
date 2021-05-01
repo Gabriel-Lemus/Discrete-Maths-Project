@@ -11,13 +11,6 @@ window.Buffer = (data) => {
   return Buffer.from(data);
 };
 
-// Listen for authentication status changes
-auth.onAuthStateChanged((user) => {
-  if (user) {
-    window.location.href = './estore.html';
-  }
-});
-
 // Helper objects
 const monthNames = [
   'January',
@@ -36,13 +29,6 @@ const monthNames = [
 
 // Assume user has been created
 let assumeUserIsCreated = true;
-
-// Listen for authentication status changes
-auth.onAuthStateChanged((user) => {
-  if (user && assumeUserIsCreated) {
-    window.location.href = './estore.html';
-  }
-});
 
 // DOM components
 const spinner = $('#signup-spinner');
@@ -239,6 +225,7 @@ $('#sign-up-form').on('submit', (event) => {
                         ),
                       })
                       .then(() => {
+                        console.log('Done!');
                         // Set user display name
                         auth.currentUser
                           .updateProfile({

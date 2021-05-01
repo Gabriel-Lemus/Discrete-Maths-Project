@@ -49,7 +49,6 @@ function setEProducts(sellers, products) {
         <br />
       `);
       for (let j = 0; j < products[i].products.length; j++) {
-        let sellerName = sellers[i];
         $(`
           <div class="card product-card" style="width: 18rem;">
             <div class="card-body">
@@ -64,7 +63,7 @@ function setEProducts(sellers, products) {
               <a onclick="addToCart(${i}, ${j})" class="btn btn-primary">Add to cart</a>
             </div>
           </div>
-          <div class="product-card" style="width: 15px"></div>
+          <div class="product-card" style="width: 15px;"></div>
         `).appendTo(`#${sellers[i].replace(/ /g, '')}-products`);
       }
     }
@@ -90,9 +89,32 @@ function addToCart(sellerIndex, productIndex) {
     seller: sellersNames[sellerIndex],
     eGood: sellerGoods[sellerIndex].products[productIndex],
   });
+  // Store cart in local storage
+  window.localStorage.setItem('cart', JSON.stringify(cart));
+  $('#addedProduct').empty();
+  $('#addedProduct').append(`
+    <p>
+      <b>E-Product:</b> ${
+        sellerGoods[sellerIndex].products[productIndex].name
+      }<br />
+      <b>Price:</b> ${sellerGoods[sellerIndex].products[
+        productIndex
+      ].price.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      })}<br />
+      <b>Description:</b> ${
+        sellerGoods[sellerIndex].products[productIndex].description
+      }<br /><br />
+      Your cart has ${
+        JSON.parse(window.localStorage.getItem('cart')).length
+      } product(s).
+    </p>
+  `);
+  $('#eStoreModal').modal();
 }
 
-// Make the sales chart when the document is ready
+// Enable feather icons
 $(document).on(
   'ready',
   (function () {
